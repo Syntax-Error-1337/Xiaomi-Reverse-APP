@@ -1,0 +1,29 @@
+# OS
+.DS_Store
+
+# Large target binaries / reverse-engineering artifacts
+*.ipa
+*.apk
+*.aab
+*.dmg
+decrypted/
+
+# Dart/Flutter
+.dart_tool/
+.packages
+build/
+.android/
+.ios/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Server
+openhome.db
+*.db-journal
+pids/
+
+# General
+node_modules/
+__pycache__/
+*.pyc
+.env

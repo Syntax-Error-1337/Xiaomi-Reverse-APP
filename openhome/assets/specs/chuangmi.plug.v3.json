@@ -1,0 +1,26 @@
+{
+  "model": "chuangmi.plug.v3",
+  "services": [
+    {
+      "siid": 2,
+      "name": "switch",
+      "properties": [
+        {
+          "siid": 2,
+          "piid": 1,
+          "name": "on",
+          "format": "bool",
+          "access": ["read", "write", "notify"]
+        },
+        {
+          "siid": 2,
+          "piid": 2,
+          "name": "power-consumption",
+          "format": "float",
+          "unit": "watt",
+          "access": ["read", "notify"]
+        }
+      ]
+    }
+  ]
+}
