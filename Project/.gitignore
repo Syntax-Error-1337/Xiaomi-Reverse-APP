@@ -1,0 +1,7 @@
+node_modules/
+dist/
+*.log
+
+backend/data/
+!backend/data/.gitkeep
+frontend/dist/

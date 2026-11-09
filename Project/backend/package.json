@@ -1,0 +1,19 @@
+{
+  "name": "pressid-backend",
+  "version": "1.0.0",
+  "description": "Tamper-proof Press ID issuance + verification API",
+  "type": "commonjs",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node src/seed.js && node src/server.js",
+    "seed": "node src/seed.js",
+    "demo": "ALLOW_DEV_SECRET=1 PRESSID_DEMO=1 node src/seed.js && ALLOW_DEV_SECRET=1 node src/server.js",
+    "test": "node --test test/"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "qrcode": "^1.5.4"
+  }
+}

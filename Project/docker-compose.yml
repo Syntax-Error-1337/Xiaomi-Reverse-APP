@@ -1,0 +1,26 @@
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "4000:4000"
+    environment:
+      # REQUIRED: replace with a real secret — the server refuses to boot
+      # without JWT_SECRET unless ALLOW_DEV_SECRET=1 (dev only).
+      JWT_SECRET: "${JWT_SECRET:?set JWT_SECRET before compose up}"
+      PORT: "4000"
+    volumes:
+      - pressid-data:/app/data
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:4000/api/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+
+volumes:
+  pressid-data:
